@@ -31,10 +31,26 @@ Learn more at https://cap.cloud.sap/docs/get-started/.
 - and consume detination in js file to call entity from external odata srv
 - declare the btp destination services in mta file as dependency in require and resources as below:
 
-requires:    
+## Destination to call odata/system
+- Destination
+  properties | property value
+  Name | NorthWind
+  Type | HTTP
+Description | northwinf
+Proxy Type | Internet
+URL | https://services.odata.org/v2/northwind/northwind.svc
+
+- Additional Properties:
+  properties | property value
+  WebIDEUsage | odata_gen
+  WebIDEEnabled | true
+  HTML5.DynamicDestination | true
+  HTML5.Timeout | 60000
+  
+- requires:    
       - name: myorg-destination     "- mandatory to connect to odata service
       - name: myorg-connectivity    "- (only needed if its connecting to on-prem system via cloud connector)
-resources:
+- resources:
   - name: myorg-destination
     type: org.cloudfoundry.managed-service
     parameters:
