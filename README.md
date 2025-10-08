@@ -49,16 +49,21 @@ URL | https://services.odata.org/v2/northwind/northwind.svc
   HTML5.DynamicDestination | true
   HTML5.Timeout | 60000
 
-- requires:    
-      - name: myorg-destination     "- mandatory to connect to odata service
-      - name: myorg-connectivity    "- (only needed if its connecting to on-prem system via cloud connector)
+- requires:   
+ properties | property value
+-------|---------
+      name | myorg-destination     "- mandatory to connect to odata service
+      name | myorg-connectivity    "- (only needed if its connecting to on-prem system via cloud connector)
+
 - resources:
-  - name: myorg-destination
+ properties | property value
+-------|---------
+  - name | myorg-destination
     type: org.cloudfoundry.managed-service
     parameters:
       service: destination
       service-plan: lite
-  - name: myorg-connectivity                    "- only needed when used on-prem odata srv
+  - name | myorg-connectivity                    "- only needed when used on-prem odata srv
     type: org.cloudfoundry.managed-service
     parameters:
       service: connectivity
