@@ -48,10 +48,12 @@ URL | https://services.odata.org/v2/northwind/northwind.svc
   WebIDEEnabled | true
   HTML5.DynamicDestination | true
   HTML5.Timeout | 60000
+## MTA config
 
 - requires:    
       - name: myorg-destination     "- mandatory to connect to odata service
       - name: myorg-connectivity    "- (only needed if its connecting to on-prem system via cloud connector)
+      
 - resources:
   - name: myorg-destination
     type: org.cloudfoundry.managed-service
